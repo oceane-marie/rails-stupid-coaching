@@ -1,0 +1,23 @@
+<div class="m-50">
+  <div class='container'>
+    <h2><%= params[:question] %></h2>
+    <p>- You</p>
+  </div>
+
+  <div class='container' id='answer'>
+    <h2>
+      <%if params[:question].include?('I am going to work')%>
+      <%= @answer[0] %>
+      <% elsif params[:question].include?('?') %>
+      <%= @answer[1] %>
+      <% else %>
+      <%= @answer[2] %>
+      <%end%>
+    </h2>
+    <p>- Your coach</p>
+  </div>
+
+  <div class='container'>
+    <%= link_to 'ask a new question', to:'ask_path'%>
+  </div>
+</div>
